@@ -1,0 +1,149 @@
+/* =============================================================================================== */
+/* =========================================== AVATAR ============================================ */
+/* =============================================================================================== */
+.avatar-main {
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    transform-style: preserve-3d;
+    overflow: hidden;
+}
+
+.avatar-main img {
+    display: flex;
+    background-size: cover;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    border-collapse: collapse;
+    width: 100%;
+    height: 100%;
+    animation: slideInRight var(--transition_default) forwards;
+    animation-delay: 0.3s;
+}
+
+#avatar-cabeca {
+    width: 55%;
+    z-index: 75;
+    --cab-rotate-x: 0;
+    --cab-rotate-y: 0;
+    transform: translateX(45%) translateY(2%) rotateX(var(--cab-rotate-x)) rotateY(var(--cab-rotate-y));
+    align-items: center;
+    justify-content: center;
+    filter: drop-shadow(var(--cab-sha-x) var(--cab-sha-y) 5px rgba(0, 0, 0, 0.3));
+}
+
+#avatar-pescoco {
+    width: 35%;
+    z-index: 25;
+    --pesc-rotate-x: 0deg;
+    --pesc-scale-y: 1;
+    transform: translateX(102%) translateY(165%) rotateX(var(--pesc-rotate-x)) scaleY(var(--pesc-scale-y));
+}
+
+#avatar-corpo {
+    width: 100%;
+    z-index: 50;
+    transform: translateX(3%) translateY(210%);
+}
+
+
+#avatar-palpebras {
+    width: 55%;
+    z-index: 75;
+    --fechar-palpebra: 0;
+    --cab-rotate-x: 0;
+    --cab-rotate-y: 0;
+    transition: transform 5ms ease;
+    transform: translateX(45%) translateY(231%) rotateX(var(--cab-rotate-x)) rotateY(var(--cab-rotate-y)) scaleY(var(--fechar-palpebra));
+}
+
+#avatar-olhos {
+    width: 55%;
+    height: 82.8%;
+    --cab-rotate-x: 0;
+    --cab-rotate-y: 0;
+    transform: translateX(45%) translateY(2%) rotateX(var(--cab-rotate-x)) rotateY(var(--cab-rotate-y));
+
+    z-index: 26;
+}
+
+.avatar-olho {
+    position: absolute;
+    display: flex;
+    background: radial-gradient(circle at 50% 50%,
+            #ffffff 1%,
+            #dac49b 60%,
+            #832929 75%,
+            #830b1f 100%);
+
+    transform-style: preserve-3d;
+    overflow: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    width: 20%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar-olho ::-webkit-scrollbar {
+    opacity: 0;
+}
+
+.avatar-olho ::-webkit-scrollbar-track-piece {
+    opacity: 0;
+}
+
+#olho-dir {
+    position: absolute;
+    transform: translateZ(0.0rem) translateX(110%) translateY(320%);
+}
+
+#olho-esq {
+    position: fixed;
+    transform: translateZ(0.0rem) translateX(295%) translateY(320%);
+
+}
+
+.avatar-iris {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-collapse: collapse;
+    background: radial-gradient(circle at center,
+            #0a3d0a 0%,
+            #515f14 25%,
+            #2ea82e 50%,
+            #355735 75%,
+            #0a3d0a 100%);
+    width: 30%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    transform: translateX(var(--iri-mov-x)) translateY(var(--iri-mov-y));
+}
+
+.avatar-pupila {
+    background-color: black;
+    border-radius: 50%;
+    width: 50%;
+    aspect-ratio: 1/1;
+}
+
+/* suavização da entrada/saida de animação */
+.smooth-transition {
+    transition: all 0.3s ease;
+}
+
+
+@keyframes floatUpDown {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    35% {
+        transform: translateY(-3px);
+    }
+}

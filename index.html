@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=" preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="./style/geral.css">
+
+    <title>ARES</title>
+</head>
+
+<body id="body-theme">
+
+    <!-- NAVBAR -->
+    <!-- Botão retrátil -->
+    <div id="navbar-toggle">
+        <button id="navbar-toggle-icon" onclick="toggle_nav_menu()" aria-label="Abrir ou fechar navbar">
+        </button>
+    </div>
+    <div id="navbar" class="navbar">
+
+        <div id="navbar__avatar">
+
+            <div id="avatar-cabeca" class="avatar-main">
+                <img id="avatar-img-cabeca" src="./src/images/atavar_cabeca.png" alt="">
+            </div>
+            <div id="avatar-olhos">
+                <div id="olho-dir" class="avatar-olho">
+                    <div id="iris-dir" class="avatar-iris">
+                        <div class="avatar-pupila"></div>
+                    </div>
+                </div>
+
+                <div id="olho-esq" class="avatar-olho">
+                    <div id="iris-esq" class="avatar-iris">
+                        <div class="avatar-pupila"></div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="avatar-corpo" class="avatar-main">
+                <img id="avatar-img-corpo" src="./src/images/atavar_corpo.png" alt="">
+            </div>
+
+            <div id="avatar-pescoco" class="avatar-main">
+                <img id="avatar-img-pescoco" src="./src/images/avatar_pescoco.png" alt="">
+            </div>
+
+            <div id="avatar-palpebras" class="avatar-main">
+                <img id="avatar-img-palpebras" src="./src/images/atavar_palpebras.png" alt="">
+            </div>
+
+        </div>
+
+        <nav class="navbar-menu">
+            <ul id="menu-pages">
+                <li><a id="nav-bio" class="nav-bt" ref="#sobre">SOBRE </a></li>
+                <li><a id="nav-projetos" class="nav-bt" ref="#projetos">PROJETOS</a></li>
+                <li><a id="nav-habilidades" class="nav-bt" ref="#Habilidades">HABILIDADES</a></li>
+                <li><a id="nav-contato" class="nav-bt" ref="#contato">CONTATO</a></li>
+            </ul>
+        </nav>
+        <div id="navbar__contact">
+            <a class="btn-contats" href="https://github.com/EuAres56" target="_blank" rel="noopener">
+                <i class="icon github"></i>
+            </a>
+
+            <a class="btn-contats" href="https://www.linkedin.com/in/elizeu-sanches-69a155373/" target="_blank"
+                rel="noopener">
+                <i class="icon linkedin"></i>
+            </a>
+        </div>
+
+    </div>
+
+    <main id="box-main">
+        <div id="page-intro" class="page">
+            <section id="slide-intro" class="slide">
+                <div id="box-intro-writer">
+                    <p>
+                        <span id="intro-writer-1" class="intro-writer"></span>
+                    </p>
+                    <p>
+                        <span id="intro-writer-2" class="intro-writer"></span><span id="intro-writer-3"
+                            class="intro-writer"></span>
+                    </p>
+                    <p>
+                        <span id="intro-writer-4" class="intro-writer"></span>
+                    </p>
+                </div>
+                <div id="box-intro-cards">
+                    <div class="card-intro">
+                        <i class="bi bi-file-earmark-code"></i>
+                        <h2>PYTHON</h2>
+                        <p>LINGUAGENS</p>
+                    </div>
+                    <div class="card-intro">
+                        <i class="bi bi-stack"></i>
+                        <h2>FLASK</h2>
+                        <p>FRAMEWORKS</p>
+                    </div>
+                    <div class="card-intro">
+                        <i class="bi bi-award"></i>
+                        <h2>5+</h2>
+                        <p>CERTIFICAÇÕES</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+        <!-- <section id="page-sobre" class="page">
+
+            <div class="sobre-container">
+                <h1>Sobre mim</h1>
+                <p>
+                    Prazer, sou Elizeu Sanches Junior — mas pode me chamar de <strong>Ares</strong>.
+                    Sou desenvolvedor full stack, apaixonado por tecnologia desde criança.
+                </p>
+                <p>
+                    Tenho base sólida em <strong>Python</strong> — de automações a dados e integrações com APIs —
+                    e domínio em <strong>HTML, CSS e JavaScript</strong>. Meu foco é transformar ideias
+                    em soluções funcionais, bonitas e eficientes.
+                </p>
+                <p>
+                    Hoje, colaboro na criação da <strong>Reple Social</strong>, uma ONG que leva educação
+                    e tecnologia a comunidades do Rio de Janeiro.
+                </p>
+                <p class="destaque">
+                    Código é minha linguagem. Solução é meu objetivo.
+                    Estou só no começo — mas se você busca impacto, esse é um ótimo ponto de partida.
+                </p>
+            </div>
+
+            <div class="metrics-container">
+                <div class="metric-card">
+                    <i class="fas fa-rocket"></i>
+                    <span class="metric-number">15+</span>
+                    <span class="metric-label">Projetos</span>
+                </div>
+                <div class="metric-card">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span class="metric-number">5</span>
+                    <span class="metric-label">Anos</span>
+                </div>
+
+                <div class="metric-card">
+                    <i class="fas fa-code"></i>
+                    <span class="metric-number">10+</span>
+                    <span class="metric-label">Tecnologias</span>
+                </div>
+            </div>
+        </section> -->
+    </main>
+
+</body>
+<script src="./srcipts/scrips.js"></script>
+
+
+
+</html>

@@ -1,0 +1,228 @@
+#page-intro {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100dvh;
+    width: 100%;
+}
+
+#slide-intro {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 100%;
+    width: 100%;
+    transition: padding-left 0.7s;
+    box-sizing: border-box;
+}
+
+#box-intro-writer {
+    /* margin-top: 10dvh; REMOVIDO: o gap do #page-intro já controla o espaçamento vertical */
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* Permite que ele ocupe a largura máxima definida pelo max-width */
+    min-width: 300px;
+    /* Mantido para controle mínimo */
+    line-height: normal;
+    /* MELHORIA: Resetar line-height para não interferir nos parágrafos */
+    z-index: 10;
+    padding: var(--padding_cards);
+    /* Ajustado para valor fixo, similar ao sobre-container para consistência */
+    background-color: var(--color_shadow_tertiary);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 15px var(--color_shadow_primary);
+    border-radius: 15px;
+    /* Alinhado com a largura máxima do box de cards para consistência visual */
+    max-width: 720px;
+    box-sizing: border-box;
+    /* Adapte para a largura ideal do seu conteúdo */
+
+    /* Espaçamento entre as linhas de texto dentro do box */
+    gap: 0.5rem;
+    /* Usar gap para espaçamento entre os p's se for um flex container */
+    /* ou use margin-bottom nos p's se preferir */
+}
+
+#box-intro-writer:hover {
+    transform: translateY(-5px);
+    /* Efeito de elevação no hover */
+    box-shadow: 0 15px 25px var(--color_shadow_primary);
+    /* Sombra mais intensa no hover */
+    transition: var(--transition_default);
+}
+
+#box-intro-writer p {
+    margin: 0;
+    /* REMOVER margens padrão do parágrafo */
+    padding: 0;
+    /* REMOVER padding padrão do parágrafo */
+}
+
+.intro-writer {
+    color: var(--color_primary);
+    font-size: 4rem;
+    /* Mantido conforme sua imagem */
+    font-weight: 700;
+    line-height: 1;
+    /* Para evitar espaçamento extra na linha do span */
+    /* padding: 0; Já está em p */
+}
+
+/* NOVO: Estilos para as letras individuais */
+.intro-writer .char {
+    display: inline-block;
+    transition: transform 0.3s ease-out, color 0.3s ease-out;
+    /* CHAVE: HERDAR a cor do elemento pai.
+       Isso garante que a cor inicial seja a definida pelos IDs (intro-writer-1, etc.). */
+    color: inherit;
+    line-height: 0.1;
+    white-space: pre;
+    /* Mantém espaços entre as palavras */
+}
+
+/* NOVO: Efeito de HOVER para cada letra individualmente */
+.intro-writer .char:hover {
+    transform: scale(1.1) translateY(-8px);
+    /* Mantém o crescimento e a elevação */
+    /* Define a cor ESPECÍFICA para o hover */
+    color: var(--color_primary);
+    /* Vai para o vermelho quando hover */
+}
+
+#intro-writer-2 {
+    line-height: 0.1;
+}
+
+#intro-writer-3 {
+    color: var(--color_tertiary);
+    /* Cor branca para 'Ares' */
+    font-size: 6rem;
+    /* Tamanho maior para 'Ares' */
+    font-weight: 900;
+    line-height: 0.1;
+    /* Essencial para que 'Ares' não adicione muito espaço vertical */
+}
+
+#intro-writer-4 {
+    color: var(--color_tertiary);
+    /* Cor branca para 'Dev Full Stack' */
+    font-size: 3.5rem;
+    /* Tamanho para 'Dev Full Stack' */
+    font-weight: 500;
+    line-height: 1;
+    /* Ajustado para que fique mais próximo do 'Ares' */
+    /* REMOVER line-height: 150%; para evitar espaçamento excessivo */
+}
+
+#intro-writer-5 {
+    color: var(--color_quintiary);
+    /* Cor cinza claro para a lista de tecnologias */
+    font-size: 1.05rem;
+    /* Tamanho para a lista de tecnologias */
+    font-weight: 400;
+    /* Peso normal */
+    line-height: 1.5;
+    /* Espaçamento padrão para texto corrido */
+    margin-top: 1rem;
+    /* Espaçamento acima da linha de tecnologias */
+}
+
+#box-intro-cards {
+    margin-top: 20px;
+    display: grid;
+    width: 100%;
+    max-width: 720px;
+    min-width: 300px;
+    /* ou 90vw */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card-intro {
+    width: 100%;
+    /* ok */
+    min-width: 0;
+    /* ESSENCIAL */
+    overflow: hidden;
+    padding: 10px;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background-color: var(--color_shadow_tertiary);
+    backdrop-filter: blur(15px);
+    box-shadow: 0 10px 15px var(--color_shadow_primary);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 0, 55, 0.15);
+    transition: var(--transition_default);
+    box-sizing: border-box;
+    /* muito importante */
+}
+
+
+.card-intro:hover {
+    transform: translateY(-5px);
+    /* Efeito de elevação no hover */
+    box-shadow: 0 15px 25px var(--color_shadow_primary);
+    /* Sombra mais intensa no hover */
+}
+
+/* Novo estilo para o ÍCONE */
+.card-intro i {
+    font-size: 2.0rem;
+    /* Tamanho do ícone */
+    color: var(--color_primary);
+    /* Cor vermelha para o ícone */
+    margin-bottom: 5px;
+    /* Espaçamento entre o ícone e o texto H2 */
+}
+
+.card-intro h2 {
+    color: var(--color_tertiary);
+    /* Branco para o nome da tecnologia/número */
+    font-size: 1.7rem;
+    /* Tamanho para o nome da tecnologia */
+    font-weight: 700;
+    line-height: 1;
+    /* Ajusta a altura da linha para o texto grande */
+    padding: 0;
+    margin: 0;
+    /* Remover margens padrão */
+}
+
+.card-intro p {
+    color: var(--color_quintiary);
+    /* Cinza claro para o rótulo da categoria */
+    font-size: 0.6rem;
+    /* Tamanho menor para o rótulo */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+    /* Remover margens padrão */
+}
+
+@media (max-width: 600px) {
+    #intro-writer-1 {
+        line-height: 0.1;
+        font-size: 3rem;
+    }
+
+    #intro-writer-2 {
+        line-height: 0.3;
+        font-size: 4.7rem;
+    }
+
+    #intro-writer-3 {
+        line-height: 0.9;
+        font-size: 5rem;
+    }
+
+    #intro-writer-4 {
+        font-size: 3rem;
+    }
+
+}
