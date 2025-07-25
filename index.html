@@ -17,16 +17,15 @@
 
     <!-- NAVBAR -->
     <!-- Botão retrátil -->
-    <div id="navbar-toggle">
-        <button id="navbar-toggle-icon" onclick="toggle_nav_menu()" aria-label="Abrir ou fechar navbar">
-        </button>
-    </div>
+    <button id="navbar-toggle" onclick="toggle_nav_menu()" aria-label="Abrir ou fechar navbar">
+        <label id="navbar-toggle-icon"></label>
+    </button>
     <div id="navbar" class="navbar">
 
         <div id="navbar__avatar">
 
             <div id="avatar-cabeca" class="avatar-main">
-                <img id="avatar-img-cabeca" src="./src/images/atavar_cabeca.png" alt="">
+                <img id="avatar-img-cabeca" src="./src/images/avatar/atavar_cabeca.png" alt="">
             </div>
             <div id="avatar-olhos">
                 <div id="olho-dir" class="avatar-olho">
@@ -43,15 +42,15 @@
             </div>
 
             <div id="avatar-corpo" class="avatar-main">
-                <img id="avatar-img-corpo" src="./src/images/atavar_corpo.png" alt="">
+                <img id="avatar-img-corpo" src="./src/images/avatar/atavar_corpo.png" alt="">
             </div>
 
             <div id="avatar-pescoco" class="avatar-main">
-                <img id="avatar-img-pescoco" src="./src/images/avatar_pescoco.png" alt="">
+                <img id="avatar-img-pescoco" src="./src/images/avatar/avatar_pescoco.png" alt="">
             </div>
 
             <div id="avatar-palpebras" class="avatar-main">
-                <img id="avatar-img-palpebras" src="./src/images/atavar_palpebras.png" alt="">
+                <img id="avatar-img-palpebras" src="./src/images/avatar/atavar_palpebras.png" alt="">
             </div>
 
         </div>
@@ -73,11 +72,19 @@
                 rel="noopener">
                 <i class="icon linkedin"></i>
             </a>
+
+            <a class="btn-contats" href="" target="_blank" rel="noopener">
+                <i class="icon instagram"></i>
+            </a>
+
+            <a class="btn-contats" href="" target="_blank" rel="noopener">
+                <i class="icon youtube"></i>
+            </a>
         </div>
 
     </div>
 
-    <main id="box-main">
+    <div id="box-main">
         <div id="page-intro" class="page">
             <section id="slide-intro" class="slide">
                 <div id="box-intro-writer">
@@ -97,65 +104,326 @@
                         <i class="bi bi-file-earmark-code"></i>
                         <h2>PYTHON</h2>
                         <p>LINGUAGENS</p>
+                        <div class="card-intro-neons">
+                            <label></label>
+                            <label></label>
+                            <label></label>
+                        </div>
                     </div>
                     <div class="card-intro">
                         <i class="bi bi-stack"></i>
                         <h2>FLASK</h2>
                         <p>FRAMEWORKS</p>
+                        <div class="card-intro-neons">
+                            <label></label>
+                            <label></label>
+                            <label></label>
+                        </div>
                     </div>
                     <div class="card-intro">
                         <i class="bi bi-award"></i>
                         <h2>5+</h2>
                         <p>CERTIFICAÇÕES</p>
+                        <div class="card-intro-neons">
+                            <label></label>
+                            <label></label>
+                            <label></label>
+                        </div>
                     </div>
                 </div>
             </section>
         </div>
 
 
-        <!-- <section id="page-sobre" class="page">
+        <div id="page-sobre" class="page">
+            <section id="slide-sobre" class="slide">
+                <h2 id="sobre-frase-inicial">"CODANDO SONHOS E REALIZANDO IDEIAS"</h2>
 
-            <div class="sobre-container">
-                <h1>Sobre mim</h1>
-                <p>
-                    Prazer, sou Elizeu Sanches Junior — mas pode me chamar de <strong>Ares</strong>.
-                    Sou desenvolvedor full stack, apaixonado por tecnologia desde criança.
-                </p>
-                <p>
-                    Tenho base sólida em <strong>Python</strong> — de automações a dados e integrações com APIs —
-                    e domínio em <strong>HTML, CSS e JavaScript</strong>. Meu foco é transformar ideias
-                    em soluções funcionais, bonitas e eficientes.
-                </p>
-                <p>
-                    Hoje, colaboro na criação da <strong>Reple Social</strong>, uma ONG que leva educação
-                    e tecnologia a comunidades do Rio de Janeiro.
-                </p>
-                <p class="destaque">
-                    Código é minha linguagem. Solução é meu objetivo.
-                    Estou só no começo — mas se você busca impacto, esse é um ótimo ponto de partida.
-                </p>
-            </div>
+                <div id="box-sobre-cards" class="sobre-container">
 
-            <div class="metrics-container">
-                <div class="metric-card">
-                    <i class="fas fa-rocket"></i>
-                    <span class="metric-number">15+</span>
-                    <span class="metric-label">Projetos</span>
-                </div>
-                <div class="metric-card">
-                    <i class="fas fa-calendar-alt"></i>
-                    <span class="metric-number">5</span>
-                    <span class="metric-label">Anos</span>
+                    <input type="checkbox" id="modal-ares" class="modal-toggle" hidden>
+                    <input type="checkbox" id="modal-bio" class="modal-toggle" hidden>
+                    <input type="checkbox" id="modal-objetivos" class="modal-toggle" hidden>
+
+
+
+                    <div class="card-sobre-rot">
+                        <div id="card-sobre__sobre" class="card-sobre">
+                            <label for="modal-ares" class="card-sobre-lupa">
+                                <i id="card-sobre-lupa-ares"></i>
+                            </label>
+                            <i id="icon-sobre-ares" class="icon-sobre"></i>
+                            <h2>ARES</h2>
+                            <div class="card-sobre-texto">
+                                <p>
+                                    Prazer, sou Elizeu Sanches Junior — mas pode me chamar de Ares.
+                                    Sou desenvolvedor full stack e apaixonado por tecnologia desde criança.
+                                    Nascido em Guarulhos (SP) e atualmente vivendo em Juazeiro (BA), na divisa com
+                                    Pernambuco,
+                                    trago comigo uma mistura de influências e olhares.
+
+                                    O que me move é a possibilidade de sonhar, imaginar universos e torná-los reais.
+                                    Essa
+                                    inquietação criativa se reflete em tudo o que faço: sou fascinado pelo código —
+                                    preciso,
+                                    lógico — mas também pelo lado artístico e sensível das ideias. Gosto de transformar
+                                    o
+                                    invisível em algo palpável. Criar, inovar e dar forma ao intangível é onde realmente
+                                    me
+                                    encontro.
+                                </p>
+                            </div>
+                            <p class="card-sobre-indic">Aproxime o mouse ou toque no card...</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="card-sobre-rot">
+                        <div id="card-sobre__bio" class="card-sobre">
+                            <label for="modal-bio" class="card-sobre-lupa">
+                                <i id="card-sobre-lupa-bio"></i>
+                            </label>
+                            <i id="icon-sobre-bio" class="icon-sobre"></i>
+                            <h2>BIOGRÁFIA</h2>
+                            <div class="card-sobre-texto">
+                                <p>
+                                    Fui criado apenas pela minha mãe, uma mulher forte, trabalhadora, que mesmo diante
+                                    de
+                                    muitas
+                                    limitações conseguiu me dar o essencial: amor, educação e limites. A ausência de
+                                    recursos
+                                    nunca
+                                    foi desculpa — ela sempre deu um jeito.
+
+                                    Foi nesse cenário, simples mas cheio de significado, que minha curiosidade por
+                                    tecnologia
+                                    nasceu. Tive acesso ao meu primeiro computador por volta dos 6 ou 7 anos. Era bem
+                                    limitado,
+                                    mas para mim, aquilo era uma porta para outro universo. Lembro da primeira vez que
+                                    tentei
+                                    formatar o sistema — eu tinha uns 8 anos. Não sabia nada de inglês, mas com teimosia
+                                    e
+                                    tentativa
+                                    consegui... exceto pelos drivers, que eu nem sabia que existiam ainda. (risos)
+
+                                    Aos 13 anos dei meu primeiro passo formal no mundo da tecnologia: um curso de
+                                    informática
+                                    básica, que me deu a base para muitos dos desafios que enfrentaria depois. Com 15,
+                                    já
+                                    consertava
+                                    computadores por conta própria. Na mesma época, ingressei no ensino técnico em
+                                    administração, o
+                                    que me apresentou outro mundo — e que por alguns anos acabou sendo o caminho que
+                                    segui.
+
+                                    Mas foi em 2019 que codar entrou de vez na minha vida, através do VBA, dentro do
+                                    pacote
+                                    Office.
+                                    Em 2023 conheci o Python, que desde então considero minha "língua mãe". Em 2025,
+                                    decidi
+                                    mergulhar de cabeça no desenvolvimento — algo que surgiu naturalmente do meu contato
+                                    com
+                                    Python,
+                                    especialmente através do Flask.
+
+                                    Hoje, me aprofundo cada vez mais em tecnologias web, unindo lógica e criatividade,
+                                    técnica e
+                                    imaginação — com a mesma paixão de quando descobri, lá atrás, que um computador
+                                    podia
+                                    ser
+                                    mais
+                                    que uma máquina: podia ser a chave para transformar ideias em realidade.
+                                </p>
+                            </div>
+                            <p class="card-sobre-indic">Aproxime o mouse ou toque no card...</p>
+                        </div>
+                    </div>
+
+
+
+
+                    <div class="card-sobre-rot">
+                        <div id="card-sobre__objetivos" class="card-sobre">
+                            <div class="card-sobre-lupa">
+                                <i id="card-sobre-lupa-ares"></i>
+                            </div>
+                            <label for="modal-objetivos" class="card-sobre-lupa">
+                                <i id="card-sobre-lupa-objetivos"></i>
+                            </label>
+                            <i id="icon-sobre-objetivos" class="icon-sobre"></i>
+                            <h2>OBJETIVOS</h2>
+                            <div id="card-sobre__objetivos" class="card-sobre-texto ">
+                                <p>
+                                    Como qualquer jovem com ambição, tenho muitos objetivos — e o primeiro deles é até
+                                    óbvio: me
+                                    estabelecer no mercado. Afinal, antes de qualquer sonho maior, é preciso garantir o
+                                    básico —
+                                    o pão na mesa.
+
+                                    Mas minhas metas vão além da estabilidade. Tenho um plano claro: criar uma
+                                    plataforma
+                                    completa de educação profissionalizante. A ideia é oferecer ensino tecnológico
+                                    acessível,
+                                    com orientação prática e estruturada. Em um cenário onde conteúdo não falta, o que
+                                    realmente
+                                    faz falta é direção. Filtrar o que é útil, o que realmente prepara alguém para o
+                                    mercado, é
+                                    um desafio — e quero ser parte da solução.
+
+                                    Sei que para tirar esse projeto do papel, preciso construir uma trajetória sólida.
+                                    Por
+                                    isso,
+                                    uma das minhas metas é me tornar uma referência — ser reconhecido como alguém que
+                                    inspira,
+                                    ensina com método e cria com propósito. Quero que meu nome seja sinônimo de
+                                    criatividade
+                                    e
+                                    estratégia no universo da programação.
+
+                                    No curto prazo, estou dando passos concretos nessa direção. Através da Reple Social,
+                                    estou
+                                    envolvido na formação de uma equipe — um verdadeiro banco de talentos, do qual
+                                    também
+                                    faço
+                                    parte — com jovens dispostos a transformar o mercado digital com ousadia, propósito
+                                    e
+                                    visão
+                                    de futuro.
+                                </p>
+                            </div>
+                            <p class="card-sobre-indic">Aproxime o mouse ou toque no card...</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="modal modal-from-ares">
+                        <label for="modal-ares" class="modal-close">&times;</label>
+                        <div class="modal-content">
+                            <h2>ARES</h2>
+                            <p>
+                                Prazer, sou Elizeu Sanches Junior — mas pode me chamar de Ares.
+                                Sou desenvolvedor full stack e apaixonado por tecnologia desde criança.
+                                Nascido em Guarulhos (SP) e atualmente vivendo em Juazeiro (BA), na divisa com
+                                Pernambuco,
+                                trago comigo uma mistura de influências e olhares.
+
+                                O que me move é a possibilidade de sonhar, imaginar universos e torná-los reais.
+                                Essa
+                                inquietação criativa se reflete em tudo o que faço: sou fascinado pelo código —
+                                preciso,
+                                lógico — mas também pelo lado artístico e sensível das ideias. Gosto de transformar
+                                o
+                                invisível em algo palpável. Criar, inovar e dar forma ao intangível é onde realmente
+                                me
+                                encontro.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="modal modal-from-bio">
+                        <label for="modal-bio" class="modal-close">&times;</label>
+                        <div class="modal-content">
+                            <h2>BIOGRÁFIA</h2>
+                            <p>
+                                Fui criado apenas pela minha mãe, uma mulher forte, trabalhadora, que mesmo diante
+                                de
+                                muitas
+                                limitações conseguiu me dar o essencial: amor, educação e limites. A ausência de
+                                recursos
+                                nunca
+                                foi desculpa — ela sempre deu um jeito.
+
+                                Foi nesse cenário, simples mas cheio de significado, que minha curiosidade por
+                                tecnologia
+                                nasceu. Tive acesso ao meu primeiro computador por volta dos 6 ou 7 anos. Era bem
+                                limitado,
+                                mas para mim, aquilo era uma porta para outro universo. Lembro da primeira vez que
+                                tentei
+                                formatar o sistema — eu tinha uns 8 anos. Não sabia nada de inglês, mas com teimosia
+                                e
+                                tentativa
+                                consegui... exceto pelos drivers, que eu nem sabia que existiam ainda. (risos)
+
+                                Aos 13 anos dei meu primeiro passo formal no mundo da tecnologia: um curso de
+                                informática
+                                básica, que me deu a base para muitos dos desafios que enfrentaria depois. Com 15,
+                                já
+                                consertava
+                                computadores por conta própria. Na mesma época, ingressei no ensino técnico em
+                                administração, o
+                                que me apresentou outro mundo — e que por alguns anos acabou sendo o caminho que
+                                segui.
+
+                                Mas foi em 2019 que codar entrou de vez na minha vida, através do VBA, dentro do
+                                pacote
+                                Office.
+                                Em 2023 conheci o Python, que desde então considero minha "língua mãe". Em 2025,
+                                decidi
+                                mergulhar de cabeça no desenvolvimento — algo que surgiu naturalmente do meu contato
+                                com
+                                Python,
+                                especialmente através do Flask.
+
+                                Hoje, me aprofundo cada vez mais em tecnologias web, unindo lógica e criatividade,
+                                técnica e
+                                imaginação — com a mesma paixão de quando descobri, lá atrás, que um computador
+                                podia
+                                ser
+                                mais
+                                que uma máquina: podia ser a chave para transformar ideias em realidade.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="modal modal-from-objetivos">
+                        <label for="modal-objetivos" class="modal-close">&times;</label>
+                        <div class="modal-content">
+                            <h2>OBJETIVOS</h2>
+                            <p>
+                                Como qualquer jovem com ambição, tenho muitos objetivos — e o primeiro deles é até
+                                óbvio: me
+                                estabelecer no mercado. Afinal, antes de qualquer sonho maior, é preciso garantir o
+                                básico —
+                                o pão na mesa.
+
+                                Mas minhas metas vão além da estabilidade. Tenho um plano claro: criar uma
+                                plataforma
+                                completa de educação profissionalizante. A ideia é oferecer ensino tecnológico
+                                acessível,
+                                com orientação prática e estruturada. Em um cenário onde conteúdo não falta, o que
+                                realmente
+                                faz falta é direção. Filtrar o que é útil, o que realmente prepara alguém para o
+                                mercado, é
+                                um desafio — e quero ser parte da solução.
+
+                                Sei que para tirar esse projeto do papel, preciso construir uma trajetória sólida.
+                                Por
+                                isso,
+                                uma das minhas metas é me tornar uma referência — ser reconhecido como alguém que
+                                inspira,
+                                ensina com método e cria com propósito. Quero que meu nome seja sinônimo de
+                                criatividade
+                                e
+                                estratégia no universo da programação.
+
+                                No curto prazo, estou dando passos concretos nessa direção. Através da Reple Social,
+                                estou
+                                envolvido na formação de uma equipe — um verdadeiro banco de talentos, do qual
+                                também
+                                faço
+                                parte — com jovens dispostos a transformar o mercado digital com ousadia, propósito
+                                e
+                                visão
+                                de futuro.
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
 
-                <div class="metric-card">
-                    <i class="fas fa-code"></i>
-                    <span class="metric-number">10+</span>
-                    <span class="metric-label">Tecnologias</span>
-                </div>
-            </div>
-        </section> -->
-    </main>
+            </section>
+        </div>
+    </div>
 
 </body>
 <script src="./srcipts/scrips.js"></script>

@@ -1,0 +1,330 @@
+#page-sobre {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    min-height: 100dvh;
+}
+
+#slide-sobre {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    transition: padding-left 0.7s;
+    box-sizing: border-box;
+}
+
+#sobre-frase-inicial {
+    font-size: 3rem;
+    text-align: center;
+    color: var(--color_tertiary);
+}
+
+#box-sobre-cards {
+    position: relative;
+    margin-top: 80px;
+    display: grid;
+    width: 100%;
+    max-width: 100%;
+    min-width: 300px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.card-sobre {
+    display: flex;
+    flex-direction: column;
+    height: 350px;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    padding: 15px;
+    gap: 5px;
+    align-items: center;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px var(--color_shadow_tertiary);
+    box-sizing: border-box;
+    background-color: var(--color_secondary);
+    border: 1px solid var(--color_primary);
+    transform: rotateY(0deg) translateY(0px);
+    transition: transform 1s;
+}
+
+.card-sobre::before {
+    content: "";
+    background: linear-gradient(to right, rgb(250, 21, 59), rgb(204, 8, 40), rgb(182, 0, 30));
+    position: fixed;
+    top: 0%;
+    right: 0%;
+    height: 100%;
+    width: 100%;
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
+    z-index: -1;
+}
+
+.card-sobre::after {
+    content: "";
+    background-color: var(--color_primary);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    z-index: -1;
+    box-shadow: inset 4px 2px 2px var(--color_shadow_tertiary);
+    transition: transform 1s;
+    border-bottom: 1px solid var(--color_shadow_sextenary);
+    border-right: 1px solid var(--color_shadow_sextenary);
+}
+
+.card-sobre-lupa {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    left: 25px;
+    top: 30%;
+    opacity: 0;
+    transform: translateZ(180deg);
+    box-shadow: 0 2px 2px var(--color_shadow_quintiary),
+        -2px -2px 5px var(--color_shadow_tertiary),
+        inset -2px -2px 5px var(--color_shadow_quintiary),
+        inset 2px 2px 5px var(--color_shadow_tertiary);
+    transition-delay: 0.3s;
+}
+
+.card-sobre-lupa i {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: inline-block;
+
+    background-color: var(--color_tertiary);
+
+    -webkit-mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-fullscreen" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707m4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v3.975a.5.5 0 0 1-.5.5H11.5a.5.5 0 0 1 0-1h2.768l-4.096-4.096a.5.5 0 0 1 0-.707m0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707m-4.344 0a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.525a.5.5 0 0 1 .5-.5H4.5a.5.5 0 0 1 0 1H1.732l4.096 4.096a.5.5 0 0 1 0 .707"/></svg>');
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+
+    mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-fullscreen" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M5.828 10.172a.5.5 0 0 0-.707 0l-4.096 4.096V11.5a.5.5 0 0 0-1 0v3.975a.5.5 0 0 0 .5.5H4.5a.5.5 0 0 0 0-1H1.732l4.096-4.096a.5.5 0 0 0 0-.707m4.344 0a.5.5 0 0 1 .707 0l4.096 4.096V11.5a.5.5 0 1 1 1 0v3.975a.5.5 0 0 1-.5.5H11.5a.5.5 0 0 1 0-1h2.768l-4.096-4.096a.5.5 0 0 1 0-.707m0-4.344a.5.5 0 0 0 .707 0l4.096-4.096V4.5a.5.5 0 1 0 1 0V.525a.5.5 0 0 0-.5-.5H11.5a.5.5 0 0 0 0 1h2.768l-4.096 4.096a.5.5 0 0 0 0 .707m-4.344 0a.5.5 0 0 1-.707 0L1.025 1.732V4.5a.5.5 0 0 1-1 0V.525a.5.5 0 0 1 .5-.5H4.5a.5.5 0 0 1 0 1H1.732l4.096 4.096a.5.5 0 0 1 0 .707"/></svg>');
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain;
+}
+
+.card-sobre i {
+    transition-delay: 0.3s;
+}
+
+.card-sobre h2 {
+    color: var(--color_tertiary);
+    /* Branco para o nome da tecnologia/número */
+    font-size: 3rem;
+    /* Tamanho para o nome da tecnologia */
+    font-weight: 700;
+    line-height: 1;
+    /* Ajusta a altura da linha para o texto grande */
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    height: 100%;
+    transition-delay: 0.3s;
+    margin-top: 40px;
+}
+
+.card-sobre p {
+    color: var(--color_tertiary);
+    /* Cinza claro para o rótulo da categoria */
+    font-size: 0.6rem;
+    font-weight: 400;
+    /* Tamanho menor para o rótulo */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0;
+    transition-delay: 0.3s;
+}
+
+.card-sobre-texto {
+    flex-direction: column;
+    overflow-y: auto;
+    scrollbar-width: none;
+    transition-delay: 0.3s;
+    transform: rotateY(180deg);
+    height: 0px;
+    box-sizing: border-box;
+    text-align: justify;
+    padding-inline: 10px;
+}
+
+.card-sobre-rot:hover .card-sobre {
+    transform: rotateY(180deg) translateY(-20px);
+}
+
+.card-sobre-rot:hover .card-sobre i {
+    transform: rotateY(180deg);
+}
+
+.card-sobre-rot:hover .card-sobre::after {
+    transform: rotateZ(135deg);
+}
+
+.card-sobre-rot:hover .card-sobre h2 {
+    opacity: 0;
+    height: 0;
+}
+
+.card-sobre-rot:hover .card-sobre .card-sobre-indic {
+    opacity: 0;
+}
+
+.card-sobre-rot:hover .card-sobre .card-sobre-texto {
+    display: flex;
+    transform: rotateY(180deg);
+    height: 100%;
+}
+
+.card-sobre-rot:hover .card-sobre .card-sobre-lupa {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.card-sobre-texto::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Edge */
+}
+
+#icon-sobre-ares {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    width: 100px;
+
+    /* COR DO ÍCONE */
+    background-color: var(--color_tertiary);
+    mask-image: url('../src/images/icons/helm.png');
+    mask-size: cover;
+    mask-repeat: no-repeat;
+    filter: drop-shadow(0 0 10px var(--color_tertiary));
+}
+
+#icon-sobre-bio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    width: 100px;
+
+    /* COR DO ÍCONE */
+    fill: currentColor;
+    background-color: var(--color_tertiary);
+    mask-image: url('../src/images/icons/heart.png');
+    mask-size: cover;
+    mask-repeat: no-repeat;
+}
+
+#icon-sobre-objetivos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    aspect-ratio: 1/1;
+    width: 100px;
+
+    /* COR DO ÍCONE */
+    background-color: var(--color_tertiary);
+    mask-image: url('../src/images/icons/push_up.png');
+    mask-size: cover;
+    mask-repeat: no-repeat;
+}
+
+
+
+
+
+
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: var(--color_secondary);
+    border: 2px solid var(--color_primary);
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px var(--color_shadow_tertiary);
+    overflow-y: auto;
+    box-sizing: border-box;
+    z-index: 10;
+
+    /* Estágio inicial escondido */
+    opacity: 0;
+    transform: perspective(800px) rotateX(-90deg) translateY(-30px);
+    transform-origin: top;
+    pointer-events: none;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.modal * {
+    color: white !important;
+    transform: none !important;
+    opacity: 1 !important;
+    z-index: 999 !important;
+}
+
+.modal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    background-color: var(--color_secondary);
+    border: 2px solid var(--color_primary);
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px var(--color_shadow_tertiary);
+    overflow-y: auto;
+    box-sizing: border-box;
+    z-index: 10;
+
+    opacity: 0;
+    transform: perspective(800px) rotateX(-90deg) translateY(-30px);
+    transform-origin: top;
+    pointer-events: none;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+}
+
+.modal-close {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--color_primary);
+    z-index: 1000;
+}
+
+/* Corrigido: modais aparecem quando os checkboxes são marcados */
+#modal-ares:checked~.modal-from-ares,
+#modal-bio:checked~.modal-from-bio,
+#modal-objetivos:checked~.modal-from-objetivos {
+    opacity: 1;
+    transform: perspective(800px) rotateX(0deg) translateY(0);
+    pointer-events: auto;
+}
+
+/* Desativa elevação do card ativo */
+#modal-ares:checked~.card-sobre-rot #card-sobre__sobre,
+#modal-bio:checked~.card-sobre-rot #card-sobre__bio,
+#modal-objetivos:checked~.card-sobre-rot #card-sobre__objetivos {
+    transform: none !important;
+    box-shadow: none !important;
+}

@@ -19,7 +19,7 @@ function aplicarMovimentos(percentX, percentY) {
     const pesc_rot_X = percentY * -2;
     const pesc_rot_Y = (percentX * 10);
     const pesq_sca_y = 1 + Math.abs(percentY * -1) * 0.12;
-    const iri_mov_x = (percentX * 11);
+    const iri_mov_x = (percentX * 4);
     const iri_mov_y = (percentY * 2) + 2.5;
     const cab_sha_x = (percentX * -3) + 5;
     const cab_sha_y = (percentY * -50) + 10;
@@ -281,7 +281,7 @@ document.addEventListener('DOMContentLoaded', () => { // Adicione isso se ainda 
 
     // Cria e injeta canvas dentro do container
     const canvas = document.createElement("canvas");
-    canvas.style.position = 'absolute';
+    canvas.id = 'canvas-intro'
     container.prepend(canvas);
 
     const ctx = canvas.getContext("2d");

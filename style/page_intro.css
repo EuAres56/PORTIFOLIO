@@ -2,8 +2,8 @@
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    position: relative;
     height: 100dvh;
-    width: 100%;
 }
 
 #slide-intro {
@@ -18,32 +18,40 @@
     box-sizing: border-box;
 }
 
+#canvas-intro {
+    content: '';
+    position: absolute;
+    pointer-events: none;
+    z-index: 0;
+}
+
 #box-intro-writer {
-    /* margin-top: 10dvh; REMOVIDO: o gap do #page-intro já controla o espaçamento vertical */
     display: flex;
     flex-direction: column;
     width: 100%;
-    /* Permite que ele ocupe a largura máxima definida pelo max-width */
     min-width: 300px;
-    /* Mantido para controle mínimo */
     line-height: normal;
-    /* MELHORIA: Resetar line-height para não interferir nos parágrafos */
     z-index: 10;
     padding: var(--padding_cards);
-    /* Ajustado para valor fixo, similar ao sobre-container para consistência */
     background-color: var(--color_shadow_tertiary);
     backdrop-filter: blur(15px);
     box-shadow: 0 10px 15px var(--color_shadow_primary);
     border-radius: 15px;
-    /* Alinhado com a largura máxima do box de cards para consistência visual */
     max-width: 720px;
     box-sizing: border-box;
-    /* Adapte para a largura ideal do seu conteúdo */
-
-    /* Espaçamento entre as linhas de texto dentro do box */
     gap: 0.5rem;
-    /* Usar gap para espaçamento entre os p's se for um flex container */
-    /* ou use margin-bottom nos p's se preferir */
+}
+
+#box-intro-writer::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 15px;
+    box-shadow: inset -3px -3px 20px var(--color_bg_tertiary);
+    pointer-events: none;
 }
 
 #box-intro-writer:hover {
@@ -163,6 +171,17 @@
     /* muito importante */
 }
 
+.card-intro::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 15px;
+    box-shadow: inset -3px -3px 20px var(--color_bg_tertiary);
+    pointer-events: none;
+}
 
 .card-intro:hover {
     transform: translateY(-5px);
@@ -205,7 +224,73 @@
     /* Remover margens padrão */
 }
 
+.card-intro-neons {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: space-between;
+    height: 30px;
+    width: 30px;
+    right: -1px;
+    top: 15px;
+    z-index: -1;
+}
+
+.card-intro-neons label {
+    width: 100%;
+    height: 5px;
+    border-radius: 5px 0 0 5px;
+    background-color: var(--color_primary);
+    box-shadow: inset 1px 2px 2px var(--color_bg_tertiary);
+    border-bottom: 0.5px solid var(--color_shadow_sextenary);
+}
+
+
+@media (max-width: 768px) {
+    #intro-writer-1 {
+        line-height: 0.1;
+        font-size: 3.4rem;
+    }
+
+    #intro-writer-2 {
+        line-height: 0.3;
+        font-size: 4.9rem;
+    }
+
+    #intro-writer-3 {
+        line-height: 0.9;
+        font-size: 5.7rem;
+    }
+
+    #intro-writer-4 {
+        font-size: 3rem;
+    }
+
+}
+
 @media (max-width: 600px) {
+    #intro-writer-1 {
+        line-height: 0.1;
+        font-size: 3.4rem;
+    }
+
+    #intro-writer-2 {
+        line-height: 0.3;
+        font-size: 4.9rem;
+    }
+
+    #intro-writer-3 {
+        line-height: 0.9;
+        font-size: 5.7rem;
+    }
+
+    #intro-writer-4 {
+        font-size: 3rem;
+    }
+
+}
+
+@media (max-width: 400px) {
     #intro-writer-1 {
         line-height: 0.1;
         font-size: 3rem;
@@ -213,7 +298,7 @@
 
     #intro-writer-2 {
         line-height: 0.3;
-        font-size: 4.7rem;
+        font-size: 4.50rem;
     }
 
     #intro-writer-3 {
