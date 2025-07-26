@@ -19,6 +19,7 @@
     height: 100%;
     animation: slideInRight var(--transition_default) forwards;
     animation-delay: 0.3s;
+    position: relative;
 }
 
 #avatar-cabeca {
@@ -31,6 +32,20 @@
     justify-content: center;
     filter: drop-shadow(var(--cab-sha-x) var(--cab-sha-y) 5px rgba(0, 0, 0, 0.3));
 }
+
+#avatar-cabeca::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    z-index: 1000000;
+    box-shadow: inset calc(-34px + (2 * var(--cab-sha-x))) calc(5px + (1 * var(--cab-sha-y))) 25px rgba(0, 0, 0, 1);
+}
+
+
 
 #avatar-pescoco {
     width: 35%;
@@ -55,6 +70,25 @@
     --cab-rotate-y: 0;
     transition: transform 5ms ease;
     transform: translateX(45%) translateY(231%) rotateX(var(--cab-rotate-x)) rotateY(var(--cab-rotate-y)) scaleY(var(--fechar-palpebra));
+}
+
+.palpebras {
+    position: absolute;
+    display: flex;
+    width: 25%;
+    height: 50%;
+    border-radius: 50%;
+    box-shadow: inset calc(-13px + (1 * var(--cab-sha-x))) calc(-3px + (0.05 * var(--cab-sha-y))) 5px rgba(34, 20, 11, 0.5);
+}
+
+#palpebra_esq {
+    right: 20%;
+    bottom: 0;
+}
+
+#palpebra_dir {
+    left: 20%;
+    bottom: 0;
 }
 
 #avatar-olhos {
@@ -117,7 +151,7 @@
             #2ea82e 50%,
             #355735 75%,
             #0a3d0a 100%);
-    width: 30%;
+    width: 35%;
     aspect-ratio: 1/1;
     border-radius: 50%;
     transform: translateX(var(--iri-mov-x)) translateY(var(--iri-mov-y));
